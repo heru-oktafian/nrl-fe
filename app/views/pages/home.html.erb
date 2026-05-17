@@ -1,0 +1,394 @@
+<% content_for :title, "Portfolio - Nurul DWI" %>
+
+<!-- ====== NAVBAR ====== -->
+<nav class="fixed w-full top-0 left-0 z-[1000] bg-nrl-cream shadow-sm">
+  <div class="max-w-6xl mx-auto px-5 lg:px-10 flex items-center justify-between py-[15px]">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-3 no-underline">
+      <img src="/assets/images/logo.svg" alt="Logo" class="h-[55px] w-auto">
+      <div class="flex items-center gap-[6px]">
+        <span class="text-[1.6rem] font-bold text-nrl-dark">Nurul</span>
+        <span class="text-[1.6rem] font-bold text-nrl-accent">Dwi</span>
+      </div>
+    </a>
+    <!-- Desktop Nav Links -->
+    <ul class="desktop-nav hidden md:flex items-center gap-[30px] list-none m-0 p-0">
+      <li><a href="#beranda" class="text-nrl-dark font-semibold hover:text-nrl-accent transition-colors no-underline">Beranda</a></li>
+      <li><a href="#tentang" class="text-nrl-dark font-semibold hover:text-nrl-accent transition-colors no-underline">Tentang</a></li>
+      <li><a href="#keahlian" class="text-nrl-dark font-semibold hover:text-nrl-accent transition-colors no-underline">Keahlian</a></li>
+      <li><a href="#portfolio" class="text-nrl-dark font-semibold hover:text-nrl-accent transition-colors no-underline">Portfolio</a></li>
+      <li><a href="#kontak" class="text-nrl-dark font-semibold hover:text-nrl-accent transition-colors no-underline">Kontak</a></li>
+    </ul>
+    <!-- Mobile Hamburger Button -->
+    <button type="button" data-mobile-nav-open class="mobile-nav-trigger md:hidden h-11 w-11 flex items-center justify-center rounded-full border border-nrl-text/20 text-nrl-dark transition hover:border-nrl-accent hover:text-nrl-accent" aria-label="Buka menu">
+      <span class="text-2xl leading-none">☰</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Navigation Overlay -->
+<div data-mobile-nav-overlay class="fixed inset-0 z-[1010] hidden md:hidden">
+  <div class="absolute inset-0 bg-nrl-dark/70"></div>
+  <aside class="relative ml-auto flex h-full w-full max-w-sm flex-col bg-nrl-cream px-6 py-6 shadow-2xl">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="/assets/images/logo.svg" alt="Logo" class="h-[55px] w-auto">
+        <div class="flex items-center gap-[6px]">
+          <span class="text-xl font-bold text-nrl-dark">Nurul</span>
+          <span class="text-xl font-bold text-nrl-accent">Dwi</span>
+        </div>
+      </div>
+      <button type="button" data-mobile-nav-close class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-nrl-text/20 text-nrl-dark transition hover:border-nrl-accent hover:text-nrl-accent" aria-label="Tutup menu">
+        <span class="text-2xl leading-none">×</span>
+      </button>
+    </div>
+    <nav class="mt-10 flex flex-col gap-5 text-base font-semibold text-nrl-dark">
+      <a href="#beranda" class="rounded-xl px-3 py-3 transition hover:bg-nrl-light hover:text-nrl-accent no-underline">Beranda</a>
+      <a href="#tentang" class="rounded-xl px-3 py-3 transition hover:bg-nrl-light hover:text-nrl-accent no-underline">Tentang</a>
+      <a href="#keahlian" class="rounded-xl px-3 py-3 transition hover:bg-nrl-light hover:text-nrl-accent no-underline">Keahlian</a>
+      <a href="#portfolio" class="rounded-xl px-3 py-3 transition hover:bg-nrl-light hover:text-nrl-accent no-underline">Portfolio</a>
+      <a href="#kontak" class="rounded-xl px-3 py-3 transition hover:bg-nrl-light hover:text-nrl-accent no-underline">Kontak</a>
+    </nav>
+  </aside>
+</div>
+
+<!-- ====== HERO ====== -->
+<section id="beranda" class="bg-nrl-brown text-nrl-cream pt-40 pb-[100px]">
+  <div class="max-w-6xl mx-auto px-5 flex items-center gap-10">
+    <!-- Left: Text -->
+    <div class="flex-[1.1] fade-in">
+      <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
+        Kreativitas Berbasis<br>Strategi:<br>
+        <span class="text-nrl-cream/80">UI/UX Designer & Visual</span>
+      </h1>
+      <p class="text-nrl-cream/80 text-base leading-relaxed mb-8 max-w-lg">
+        Saya seorang Senior UI/UX Designer dengan pengalaman bertahun-tahun menciptakan solusi digital yang berpusat pada manusia. Saya percaya desain yang baik adalah tentang menyelesaikan masalah melalui riset mendalam.
+      </p>
+      <!-- Buttons -->
+      <div class="flex gap-[15px] mb-[25px]">
+        <a href="#portfolio" class="inline-block bg-nrl-cream text-nrl-dark font-semibold px-7 py-3 rounded-full hover:bg-white transition-colors no-underline text-sm">Lihat Portfolio</a>
+        <a href="#kontak" class="inline-block border-2 border-nrl-cream text-nrl-cream font-semibold px-7 py-3 rounded-full hover:bg-nrl-cream hover:text-nrl-dark transition-colors no-underline text-sm">Hubungi Saya</a>
+      </div>
+      <!-- Contact info -->
+      <div class="flex items-center gap-[10px] text-nrl-cream/70 text-[0.9rem]">
+        <img src="/assets/socials/ic-email.svg" alt="Email" class="w-4 h-4 opacity-70">
+        nuruld2805@gmail.com
+      </div>
+    </div>
+
+    <!-- Right: Polaroid Image -->
+    <div class="flex-1 text-right flex justify-end">
+      <img src="/assets/hero/nurul-profile.png" alt="Nurul DWI Profile"
+           class="w-full max-w-[480px] rotate-[4deg] transition-all duration-500 ease-out border-[12px] border-white shadow-2xl cursor-pointer hover:rotate-0 hover:scale-105">
+    </div>
+  </div>
+</section>
+
+<!-- ====== ABOUT ====== -->
+<section id="tentang" class="bg-nrl-light py-24 animate-on-scroll">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-nrl-dark mb-4">
+        Tentang <span class="text-nrl-accent">Saya</span>
+      </h2>
+      <p class="text-nrl-text/70 font-medium max-w-2xl mx-auto leading-relaxed">
+        Fokus utama saya adalah membantu startup dan perusahaan teknologi membangun produk yang tidak hanya fungsional, tetapi juga memberikan kesan emosional yang kuat bagi penggunanya.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="group bg-white rounded-xl border border-nrl-text/10 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+        <div class="mb-5 transition-transform duration-300 group-hover:scale-110">
+          <img src="/assets/services/riset-logo.svg" alt="Riset" class="w-12 h-12">
+        </div>
+        <h3 class="text-lg font-bold text-nrl-dark mb-3 transition-colors duration-300 group-hover:text-nrl-accent">Riset & Strategi</h3>
+        <p class="text-nrl-text/70 text-sm leading-relaxed">
+          Membangun fondasi desain yang kuat melalui user interview dan persona development guna menjawab kebutuhan nyata.
+        </p>
+      </div>
+      <!-- Card 2 -->
+      <div class="group bg-white rounded-xl border border-nrl-text/10 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+        <div class="mb-5 transition-transform duration-300 group-hover:scale-110">
+          <img src="/assets/services/arsitektur-logo.svg" alt="Arsitektur" class="w-12 h-12">
+        </div>
+        <h3 class="text-lg font-bold text-nrl-dark mb-3 transition-colors duration-300 group-hover:text-nrl-accent">Arsitektur & Struktur</h3>
+        <p class="text-nrl-text/70 text-sm leading-relaxed">
+          Merancang alur informasi yang logis melalui wireframing dan user flows memastikan navigasi bebas hambatan.
+        </p>
+      </div>
+      <!-- Card 3 -->
+      <div class="group bg-white rounded-xl border border-nrl-text/10 p-7 shadow-sm hover:-translate-y-2 hover:shadow-xl transition-all duration-300 cursor-pointer">
+        <div class="mb-5 transition-transform duration-300 group-hover:scale-110">
+          <img src="/assets/services/visual-logo.svg" alt="Visual" class="w-12 h-12">
+        </div>
+        <h3 class="text-lg font-bold text-nrl-dark mb-3 transition-colors duration-300 group-hover:text-nrl-accent">Visual & Sistem</h3>
+        <p class="text-nrl-text/70 text-sm leading-relaxed">
+          Menciptakan identitas visual konsisten menggunakan design systems dan tipografi untuk memperkuat estetika.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SKILLS ====== -->
+<section id="keahlian" class="bg-white py-24 animate-on-scroll">
+  <div class="max-w-6xl mx-auto px-5 flex flex-col lg:flex-row items-center gap-16">
+    <!-- Left illustration -->
+    <div class="flex-shrink-0">
+      <img src="/assets/images/skills.svg" alt="Ilustrasi Keahlian" class="w-72 lg:w-80">
+    </div>
+    <!-- Right content -->
+    <div class="flex-1">
+      <h2 class="text-3xl lg:text-4xl font-bold text-nrl-dark mb-2">
+        Keahlian <span class="text-nrl-accent">Teknis</span>
+      </h2>
+      <p class="text-nrl-text/70 font-medium mb-8">Teknologi dan framework yang saya kuasai</p>
+
+      <!-- Progress bars -->
+      <div class="space-y-5 mb-10">
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="text-sm font-medium text-nrl-text">User Research</span>
+            <span class="text-sm font-semibold text-nrl-accent">70%</span>
+          </div>
+          <div class="w-full bg-nrl-light rounded-full h-2">
+            <div class="skill-bar-fill skill-0 bg-nrl-accent h-2 rounded-full" style="--target-width: 70%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="text-sm font-medium text-nrl-text">Information Architecture</span>
+            <span class="text-sm font-semibold text-nrl-accent">90%</span>
+          </div>
+          <div class="w-full bg-nrl-light rounded-full h-2">
+            <div class="skill-bar-fill skill-1 bg-nrl-accent h-2 rounded-full" style="--target-width: 90%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="text-sm font-medium text-nrl-text">Visual Design</span>
+            <span class="text-sm font-semibold text-nrl-accent">94%</span>
+          </div>
+          <div class="w-full bg-nrl-light rounded-full h-2">
+            <div class="skill-bar-fill skill-2 bg-nrl-accent h-2 rounded-full" style="--target-width: 94%"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between mb-2">
+            <span class="text-sm font-medium text-nrl-text">Interaction Design</span>
+            <span class="text-sm font-semibold text-nrl-accent">96%</span>
+          </div>
+          <div class="w-full bg-nrl-light rounded-full h-2">
+            <div class="skill-bar-fill skill-3 bg-nrl-accent h-2 rounded-full" style="--target-width: 96%"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <h3 class="text-lg font-bold text-nrl-dark mb-4">Tools & Technologies</h3>
+      <div class="grid grid-cols-3 sm:grid-cols-5 gap-4">
+        <!-- Figma -->
+        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="transition-transform duration-300 group-hover:scale-110">
+            <img src="https://cdn.simpleicons.org/figma" alt="Figma" class="w-7 h-7" loading="lazy">
+          </div>
+          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Figma</span>
+        </div>
+        <!-- Webflow -->
+        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="transition-transform duration-300 group-hover:scale-110">
+            <img src="https://cdn.simpleicons.org/webflow" alt="Webflow" class="w-7 h-7" loading="lazy">
+          </div>
+          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Webflow</span>
+        </div>
+        <!-- Framer -->
+        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="transition-transform duration-300 group-hover:scale-110">
+            <img src="https://cdn.simpleicons.org/framer" alt="Framer" class="w-7 h-7" loading="lazy">
+          </div>
+          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Framer</span>
+        </div>
+        <!-- Adobe Illustrator -->
+        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="transition-transform duration-300 group-hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7" style="fill: #333">
+              <path d="M14.731 16.713h2.38v-8.232h-2.38v8.232zm1.188-11.455c.783 0 1.341-.531 1.341-1.22 0-.691-.532-1.22-1.341-1.22-.782 0-1.315.53-1.315 1.22 0 .69.533 1.22 1.315 1.22zm-3.238 11.455h2.51v-4.148l2.96 4.148h2.89l-3.6-4.626 3.39-4.848h-2.79l-2.85 4.307v-4.307h-2.51v9.474zM6.671 2.818h2.38v13.895h-2.38V2.818zM0 0v24h24V0H0zm22.5 22.5h-21v-21h21v21zM4.12 16.713h2.38v-8.232H4.12v8.232zM5.31 5.258c.782 0 1.34-.531 1.34-1.22 0-.691-.531-1.22-1.34-1.22-.782 0-1.315.53-1.315 1.22 0 .69.533 1.22 1.315 1.22z"/>
+            </svg>
+          </div>
+          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Illustrator</span>
+        </div>
+        <!-- Corel Draw -->
+        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
+          <div class="transition-transform duration-300 group-hover:scale-110">
+            <img src="https://cdn.simpleicons.org/coreldraw" alt="Corel Draw" class="w-7 h-7" loading="lazy">
+          </div>
+          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Corel Draw</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PORTFOLIO ====== -->
+<section id="portfolio" class="bg-nrl-accent py-24 animate-on-scroll">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl lg:text-4xl font-bold text-white mb-3">Portfolio Saya</h2>
+      <p class="text-white/80 font-medium">Ada beberapa project terbaik yang saya kerjakan</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Card 1 -->
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
+        <img src="/assets/portfolio/fintech.png" alt="Fintech" class="w-full">
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-nrl-dark mb-2 transition-colors duration-300 group-hover:text-nrl-accent">Fintech App</h3>
+          <p class="text-nrl-text/70 text-sm leading-relaxed">
+            Antarmuka aplikasi keuangan yang mengutamakan efisiensi alur transaksi dan kejelasan riwayat data.
+          </p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
+        <img src="/assets/portfolio/digital-invitation.png" alt="Wedding" class="w-full">
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-nrl-dark mb-2 transition-colors duration-300 group-hover:text-nrl-accent">Digital Wedding</h3>
+          <p class="text-nrl-text/70 text-sm leading-relaxed">
+            Desain antarmuka undangan digital yang memadukan estetika visual floral dengan navigasi modern.
+          </p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
+        <img src="/assets/portfolio/e-commerce.png" alt="E-Commerce" class="w-full">
+        <div class="p-6">
+          <h3 class="text-lg font-bold text-nrl-dark mb-2 transition-colors duration-300 group-hover:text-nrl-accent">Modern E-Commerce</h3>
+          <p class="text-nrl-text/70 text-sm leading-relaxed">
+            Desain mengintegrasikan estetika mewah pada platform Web/Tablet dengan fungsionalitas intuitif.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== KONTAK & KOLABORASI ====== -->
+<section id="kontak" class="contact animate-on-scroll">
+  <div class="max-w-[950px] mx-auto px-5">
+    <!-- Section Title -->
+    <h2 class="contact-main-title">Mari Berkolaborasi</h2>
+
+    <!-- Contact Box -->
+    <div class="contact-box">
+      <!-- Left: Info -->
+      <div class="contact-info">
+        <h3>Hubungi Saya</h3>
+
+        <!-- Email -->
+        <div class="info-item">
+          <svg class="contact-icon" viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <div>
+            <strong>Email</strong>
+            <p>nuruld2805@gmail.com</p>
+          </div>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="info-item">
+          <svg class="contact-icon" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.789l4.89-1.56A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.977 0-3.81-.563-5.388-1.53l-.387-.215-3.12.995.79-3.48-.244-.378A9.82 9.82 0 0 1 2.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82s-4.398 9.82-9.82 9.82z"/>
+          </svg>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>+62 812-3456-7890</p>
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="info-item">
+          <svg class="contact-icon" viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+          <div>
+            <strong>Lokasi</strong>
+            <p>Perak, Jombang</p>
+          </div>
+        </div>
+
+        <!-- Follow Saya -->
+        <h4 class="follow-title">Follow Saya:</h4>
+        <ul class="social-links">
+          <li>
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2z"/>
+            </svg>
+            <a href="https://instagram.com/nrlldwi" target="_blank">@nrlldwi</a>
+          </li>
+          <li>
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5.08 3.73 9.31 8.59 10.06v-7.1h-2.58V12.06h2.58v-2.22c0-2.56 1.53-3.97 3.86-3.97 1.11 0 2.27.2 2.27.2v2.5h-1.28c-1.26 0-1.65.78-1.65 1.58v1.9h2.82l-.45 2.96h-2.37v7.1C18.27 21.36 22 17.13 22 12.06 22 6.53 17.5 2.04 12 2.04z"/>
+            </svg>
+            <a href="https://facebook.com/NurulDwi" target="_blank">NurulDwi</a>
+          </li>
+          <li>
+            <svg class="social-icon" viewBox="0 0 24 24">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.34 2.88 2.88 0 0 1 2.31-4.53 2.66 2.66 0 0 1 1.04.2v-3.4a6.67 6.67 0 0 0-1-.08 6.28 6.28 0 0 0-5.4 8.85c.96 1.94 2.8 3.2 4.9 3.51a6.67 6.67 0 0 0 7.82-5.71V10.2a8.62 8.62 0 0 0 4.7 1.43V8.16a5.55 5.55 0 0 1-1.95-.47z"/>
+            </svg>
+            <a href="https://tiktok.com/@saturnus" target="_blank">@saturnus</a>
+          </li>
+        </ul>
+
+        <!-- Megaphone illustration -->
+        <img src="/assets/images/megaphone.png" alt="Megaphone" class="megaphone-img">
+      </div>
+
+      <!-- Right: Contact Form (Clipboard) -->
+      <div class="contact-form-wrapper">
+        <div class="clip-wrapper">
+          <img src="/assets/images/clipboard.svg" alt="Clipboard Clip" class="clipboard-clip">
+        </div>
+        <div class="form-container">
+          <form action="#" method="post">
+            <div class="form-group">
+              <label for="contact-name">Nama</label>
+              <input type="text" id="contact-name" placeholder="Nama Anda" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" placeholder="Email Anda" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-project">Pilih Jenis Project</label>
+              <select id="contact-project">
+                <option value="">Pilih jenis project</option>
+                <option value="web-design">Web Design</option>
+                <option value="mobile-app">Mobile App</option>
+                <option value="branding">Branding</option>
+                <option value="ui-ux">UI/UX Design</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Pesan</label>
+              <textarea id="contact-message" rows="3" placeholder="Tulis pesan Anda..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <div class="footer-container">
+    <a href="/#beranda" class="footer-link">© 2025 Nurul Dwi. All rights reserved.</a>
+    <p class="footer-love">Made with ❤️</p>
+  </div>
+</footer>
+
+<!-- ====== FOOTER ====== -->
