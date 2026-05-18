@@ -100,3 +100,140 @@ Processing by PagesController#home as HTML
 Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
 
 
+Started GET "/" for ::1 at 2026-05-19 02:38:00 +0700
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-19 02:38:11 +0700
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-19 02:38:14 +0700
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-19 02:38:22 +0700
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-19 02:38:28 +0700
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2026-05-19 02:38:36 +0700
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:06:57 +0700
+Processing by PagesController#home as */*
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant PagesController::ApiClient):
+  
+app/controllers/pages_controller.rb:3:in 'PagesController#home'
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:07:01 +0700
+Processing by PagesController#home as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant PagesController::ApiClient):
+  
+app/controllers/pages_controller.rb:3:in 'PagesController#home'
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:07:41 +0700
+Processing by PagesController#home as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant PagesController::ApiClient):
+  
+app/controllers/pages_controller.rb:3:in 'PagesController#home'
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:07:48 +0700
+Processing by PagesController#home as */*
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.5ms)
+
+
+  
+NameError (uninitialized constant PagesController::ApiClient):
+  
+app/controllers/pages_controller.rb:3:in 'PagesController#home'
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:08:19 +0700
+Processing by PagesController#home as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant ApiClient::Net):
+  
+lib/api_client.rb:6:in 'ApiClient.get'
+app/controllers/pages_controller.rb:3:in 'PagesController#home'
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:08:23 +0700
+Processing by PagesController#home as */*
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (uninitialized constant ApiClient::Net):
+  
+lib/api_client.rb:6:in 'ApiClient.get'
+app/controllers/pages_controller.rb:3:in 'PagesController#home'
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:08:56 +0700
+Processing by PagesController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 149ms (Views: 15.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 13.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:09:05 +0700
+Processing by PagesController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 2.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2026-05-19 03:09:08 +0700
+Processing by PagesController#home as */*
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | GC: 2.2ms)
+Completed 200 OK in 15ms (Views: 6.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
+
+

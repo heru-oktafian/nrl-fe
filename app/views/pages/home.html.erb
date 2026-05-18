@@ -1,4 +1,13 @@
-<% content_for :title, "Portfolio - Nurul DWI" %>
+<% 
+# Set page title from API data
+profile = @portfolio.dig('data', 'profile') || {}
+skills = @portfolio.dig('data', 'skills') || []
+tools = @portfolio.dig('data', 'tools') || []
+social_links = @portfolio.dig('data', 'social_links') || []
+projects = @portfolio.dig('data', 'projects') || []
+
+content_for :title, "Portfolio - #{profile['name'] || 'Nurul DWI'}"
+%>
 
 <!-- ====== NAVBAR ====== -->
 <nav class="fixed w-full top-0 left-0 z-[1000] bg-nrl-cream shadow-sm">
@@ -59,10 +68,10 @@
     <div class="flex-[1.1] fade-in">
       <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-6">
         Kreativitas Berbasis<br>Strategi:<br>
-        <span class="text-nrl-cream/80">UI/UX Designer & Visual</span>
+        <span class="text-nrl-cream/80"><%= profile['title'] || 'Senior UI/UX Designer & Visual Designer' %></span>
       </h1>
       <p class="text-nrl-cream/80 text-base leading-relaxed mb-8 max-w-lg">
-        Saya seorang Senior UI/UX Designer dengan pengalaman bertahun-tahun menciptakan solusi digital yang berpusat pada manusia. Saya percaya desain yang baik adalah tentang menyelesaikan masalah melalui riset mendalam.
+        <%= profile['bio'] || "Saya seorang Senior UI/UX Designer dengan pengalaman bertahun-tahun menciptakan solusi digital yang berpusat pada manusia. Saya percaya desain yang baik adalah tentang menyelesaikan masalah melalui riset mendalam." %>
       </p>
       <!-- Buttons -->
       <div class="flex gap-[15px] mb-[25px]">
@@ -72,13 +81,13 @@
       <!-- Contact info -->
       <div class="flex items-center gap-[10px] text-nrl-cream/70 text-[0.9rem]">
         <img src="/assets/socials/ic-email.svg" alt="Email" class="w-4 h-4 opacity-70">
-        nuruld2805@gmail.com
+        <%= profile['email'] || 'nuruldwi@gmail.com' %>
       </div>
     </div>
 
     <!-- Right: Polaroid Image -->
     <div class="flex-1 text-right flex justify-end">
-      <img src="/assets/hero/nurul-profile.png" alt="Nurul DWI Profile"
+      <img src="/assets/hero/nurul-profile.png" alt="<%= profile['name'] || 'Nurul DWI' %> Profile"
            class="w-full max-w-[480px] rotate-[4deg] transition-all duration-500 ease-out border-[12px] border-white shadow-2xl cursor-pointer hover:rotate-0 hover:scale-105">
     </div>
   </div>
@@ -145,86 +154,32 @@
       </h2>
       <p class="text-nrl-text/70 font-medium mb-8">Teknologi dan framework yang saya kuasai</p>
 
-      <!-- Progress bars -->
+      <!-- Progress bars - Dynamic from API -->
       <div class="space-y-5 mb-10">
+        <% skills.each_with_index do |skill, index| %>
         <div>
           <div class="flex justify-between mb-2">
-            <span class="text-sm font-medium text-nrl-text">User Research</span>
-            <span class="text-sm font-semibold text-nrl-accent">70%</span>
+            <span class="text-sm font-medium text-nrl-text"><%= skill['name'] %></span>
+            <span class="text-sm font-semibold text-nrl-accent"><%= skill['level'] %>%</span>
           </div>
           <div class="w-full bg-nrl-light rounded-full h-2">
-            <div class="skill-bar-fill skill-0 bg-nrl-accent h-2 rounded-full" style="--target-width: 70%"></div>
+            <div class="skill-bar-fill skill-<%= index %> bg-nrl-accent h-2 rounded-full" style="--target-width: <%= skill['level'] %>%"></div>
           </div>
         </div>
-        <div>
-          <div class="flex justify-between mb-2">
-            <span class="text-sm font-medium text-nrl-text">Information Architecture</span>
-            <span class="text-sm font-semibold text-nrl-accent">90%</span>
-          </div>
-          <div class="w-full bg-nrl-light rounded-full h-2">
-            <div class="skill-bar-fill skill-1 bg-nrl-accent h-2 rounded-full" style="--target-width: 90%"></div>
-          </div>
-        </div>
-        <div>
-          <div class="flex justify-between mb-2">
-            <span class="text-sm font-medium text-nrl-text">Visual Design</span>
-            <span class="text-sm font-semibold text-nrl-accent">94%</span>
-          </div>
-          <div class="w-full bg-nrl-light rounded-full h-2">
-            <div class="skill-bar-fill skill-2 bg-nrl-accent h-2 rounded-full" style="--target-width: 94%"></div>
-          </div>
-        </div>
-        <div>
-          <div class="flex justify-between mb-2">
-            <span class="text-sm font-medium text-nrl-text">Interaction Design</span>
-            <span class="text-sm font-semibold text-nrl-accent">96%</span>
-          </div>
-          <div class="w-full bg-nrl-light rounded-full h-2">
-            <div class="skill-bar-fill skill-3 bg-nrl-accent h-2 rounded-full" style="--target-width: 96%"></div>
-          </div>
-        </div>
+        <% end %>
       </div>
 
-      <!-- Tools -->
+      <!-- Tools - Dynamic from API -->
       <h3 class="text-lg font-bold text-nrl-dark mb-4">Tools & Technologies</h3>
       <div class="grid grid-cols-3 sm:grid-cols-5 gap-4">
-        <!-- Figma -->
+        <% tools.each do |tool| %>
         <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
           <div class="transition-transform duration-300 group-hover:scale-110">
-            <img src="https://cdn.simpleicons.org/figma" alt="Figma" class="w-7 h-7" loading="lazy">
+            <img src="https://cdn.simpleicons.org/<%= tool['icon'] %>" alt="<%= tool['name'] %>" class="w-7 h-7" loading="lazy" onerror="this.onerror=null; this.src='/assets/tools/default.svg';">
           </div>
-          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Figma</span>
+          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent"><%= tool['name'] %></span>
         </div>
-        <!-- Webflow -->
-        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-          <div class="transition-transform duration-300 group-hover:scale-110">
-            <img src="https://cdn.simpleicons.org/webflow" alt="Webflow" class="w-7 h-7" loading="lazy">
-          </div>
-          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Webflow</span>
-        </div>
-        <!-- Framer -->
-        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-          <div class="transition-transform duration-300 group-hover:scale-110">
-            <img src="https://cdn.simpleicons.org/framer" alt="Framer" class="w-7 h-7" loading="lazy">
-          </div>
-          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Framer</span>
-        </div>
-        <!-- Adobe Illustrator -->
-        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-          <div class="transition-transform duration-300 group-hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-7 h-7" style="fill: #333">
-              <path d="M14.731 16.713h2.38v-8.232h-2.38v8.232zm1.188-11.455c.783 0 1.341-.531 1.341-1.22 0-.691-.532-1.22-1.341-1.22-.782 0-1.315.53-1.315 1.22 0 .69.533 1.22 1.315 1.22zm-3.238 11.455h2.51v-4.148l2.96 4.148h2.89l-3.6-4.626 3.39-4.848h-2.79l-2.85 4.307v-4.307h-2.51v9.474zM6.671 2.818h2.38v13.895h-2.38V2.818zM0 0v24h24V0H0zm22.5 22.5h-21v-21h21v21zM4.12 16.713h2.38v-8.232H4.12v8.232zM5.31 5.258c.782 0 1.34-.531 1.34-1.22 0-.691-.531-1.22-1.34-1.22-.782 0-1.315.53-1.315 1.22 0 .69.533 1.22 1.315 1.22z"/>
-            </svg>
-          </div>
-          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Illustrator</span>
-        </div>
-        <!-- Corel Draw -->
-        <div class="group cursor-pointer flex flex-col items-center gap-2 bg-nrl-light rounded-xl p-4 hover:-translate-y-2 hover:shadow-xl transition-all duration-300">
-          <div class="transition-transform duration-300 group-hover:scale-110">
-            <img src="https://cdn.simpleicons.org/coreldraw" alt="Corel Draw" class="w-7 h-7" loading="lazy">
-          </div>
-          <span class="text-xs font-medium text-nrl-text text-center transition-colors duration-300 group-hover:text-nrl-accent">Corel Draw</span>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -292,7 +247,7 @@
           </svg>
           <div>
             <strong>Email</strong>
-            <p>nuruld2805@gmail.com</p>
+            <p><%= profile['email'] || 'nuruldwi@gmail.com' %></p>
           </div>
         </div>
 
@@ -300,7 +255,6 @@
         <div class="info-item">
           <svg class="contact-icon" viewBox="0 0 24 24">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.789l4.89-1.56A11.93 11.93 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.82c-1.977 0-3.81-.563-5.388-1.53l-.387-.215-3.12.995.79-3.48-.244-.378A9.82 9.82 0 0 1 2.18 12c0-5.422 4.398-9.82 9.82-9.82 5.422 0 9.82 4.398 9.82 9.82s-4.398 9.82-9.82 9.82z"/>
           </svg>
           <div>
             <strong>WhatsApp</strong>
@@ -315,31 +269,32 @@
           </svg>
           <div>
             <strong>Lokasi</strong>
-            <p>Perak, Jombang</p>
+            <p><%= profile['location'] || 'Jakarta, Indonesia' %></p>
           </div>
         </div>
 
         <!-- Follow Saya -->
         <h4 class="follow-title">Follow Saya:</h4>
         <ul class="social-links">
+          <% social_links.each do |link| %>
           <li>
             <svg class="social-icon" viewBox="0 0 24 24">
+              <% case link['platform'].downcase %>
+              <% when 'instagram' %>
               <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2z"/>
+              <% when 'linkedin' %>
+              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+              <% when 'dribbble' %>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 0 1 1.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 0 0-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0 1 12 3.475zm-3.633.803a53.896 53.896 0 0 1 3.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 0 1 4.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.753 5.97-6.735 6.5a5.873 5.873 0 0 1-2.354-4.597zM12 20.547a8.473 8.473 0 0 1-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.044-.017a28.247 28.247 0 0 1 1.821 3.207 8.4 8.4 0 0 1-3.296.616z"/>
+              <% when 'behance' %>
+              <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988H0V5.211h9.954v5.188H3.997v-.001zM9.422 8.209H6.1v3.973h3.322c1.951 0 2.735-1.32 2.735-1.977 0-1.001-1.005-1.996-2.713-1.996zm-3.322 5.978h3.322v-3.973H6.1v3.973z"/>
+              <% else %>
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+              <% end %>
             </svg>
-            <a href="https://instagram.com/nrlldwi" target="_blank">@nrlldwi</a>
+            <a href="<%= link['url'] %>" target="_blank"><%= link['platform'] %></a>
           </li>
-          <li>
-            <svg class="social-icon" viewBox="0 0 24 24">
-              <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06c0 5.08 3.73 9.31 8.59 10.06v-7.1h-2.58V12.06h2.58v-2.22c0-2.56 1.53-3.97 3.86-3.97 1.11 0 2.27.2 2.27.2v2.5h-1.28c-1.26 0-1.65.78-1.65 1.58v1.9h2.82l-.45 2.96h-2.37v7.1C18.27 21.36 22 17.13 22 12.06 22 6.53 17.5 2.04 12 2.04z"/>
-            </svg>
-            <a href="https://facebook.com/NurulDwi" target="_blank">NurulDwi</a>
-          </li>
-          <li>
-            <svg class="social-icon" viewBox="0 0 24 24">
-              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.34 2.88 2.88 0 0 1 2.31-4.53 2.66 2.66 0 0 1 1.04.2v-3.4a6.67 6.67 0 0 0-1-.08 6.28 6.28 0 0 0-5.4 8.85c.96 1.94 2.8 3.2 4.9 3.51a6.67 6.67 0 0 0 7.82-5.71V10.2a8.62 8.62 0 0 0 4.7 1.43V8.16a5.55 5.55 0 0 1-1.95-.47z"/>
-            </svg>
-            <a href="https://tiktok.com/@saturnus" target="_blank">@saturnus</a>
-          </li>
+          <% end %>
         </ul>
 
         <!-- Megaphone illustration -->
@@ -386,9 +341,7 @@
 <!-- ====== FOOTER ====== -->
 <footer class="footer">
   <div class="footer-container">
-    <a href="/#beranda" class="footer-link">© 2025 Nurul Dwi. All rights reserved.</a>
+    <a href="/#beranda" class="footer-link">© 2025 <%= profile['name'] || 'Nurul DWI' %>. All rights reserved.</a>
     <p class="footer-love">Made with ❤️</p>
   </div>
 </footer>
-
-<!-- ====== FOOTER ====== -->
