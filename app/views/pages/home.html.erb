@@ -194,36 +194,15 @@ content_for :title, "Portfolio - #{profile['name'] || 'Nurul DWI'}"
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      <!-- Card 1 -->
+      <% projects.each do |project| %>
       <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
-        <img src="/assets/portfolio/fintech.png" alt="Fintech" class="w-full">
+        <img src="<%= project['image_url'] || '/assets/portfolio/default.png' %>" alt="<%= project['title'] %>" class="w-full">
         <div class="p-6">
-          <h3 class="text-lg font-bold text-nrl-dark mb-2 transition-colors duration-300 group-hover:text-nrl-accent">Fintech App</h3>
-          <p class="text-nrl-text/70 text-sm leading-relaxed">
-            Antarmuka aplikasi keuangan yang mengutamakan efisiensi alur transaksi dan kejelasan riwayat data.
-          </p>
+          <h3 class="text-lg font-bold text-nrl-dark mb-2 transition-colors duration-300 group-hover:text-nrl-accent"><%= project['title'] %></h3>
+          <p class="text-nrl-text/70 text-sm leading-relaxed"><%= project['description'] %></p>
         </div>
       </div>
-      <!-- Card 2 -->
-      <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
-        <img src="/assets/portfolio/digital-invitation.png" alt="Wedding" class="w-full">
-        <div class="p-6">
-          <h3 class="text-lg font-bold text-nrl-dark mb-2 transition-colors duration-300 group-hover:text-nrl-accent">Digital Wedding</h3>
-          <p class="text-nrl-text/70 text-sm leading-relaxed">
-            Desain antarmuka undangan digital yang memadukan estetika visual floral dengan navigasi modern.
-          </p>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="group bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer">
-        <img src="/assets/portfolio/e-commerce.png" alt="E-Commerce" class="w-full">
-        <div class="p-6">
-          <h3 class="text-lg font-bold text-nrl-dark mb-2 transition-colors duration-300 group-hover:text-nrl-accent">Modern E-Commerce</h3>
-          <p class="text-nrl-text/70 text-sm leading-relaxed">
-            Desain mengintegrasikan estetika mewah pada platform Web/Tablet dengan fungsionalitas intuitif.
-          </p>
-        </div>
-      </div>
+      <% end %>
     </div>
   </div>
 </section>
