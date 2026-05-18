@@ -302,6 +302,175 @@
 
 /* ====== MOBILE RESPONSIVE ====== */
 @media (max-width: 768px) {
+  /* ====== HERO SECTION ====== */
+  #beranda {
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  #beranda h1 {
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
+  }
+  
+  #beranda h1 br {
+    display: none;
+  }
+  
+  #beranda p {
+    font-size: 0.85rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  #beranda .flex gap-\\[15px\\] {
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+  
+  #beranda .flex gap-\\[15px\\] a {
+    text-align: center !important;
+    padding: 12px 20px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  #beranda img:last-child {
+    max-width: 260px !important;
+    margin: 20px auto 0 !important;
+  }
+  
+  #beranda .flex.items-center.gap-\\[10px\\] {
+    font-size: 0.75rem !important;
+    margin-top: 15px !important;
+  }
+
+  /* ====== ABOUT SECTION ====== */
+  #tentang {
+    padding: 50px 0 !important;
+  }
+  
+  #tentang h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  #tentang > div > div:first-child p {
+    font-size: 0.85rem !important;
+    padding: 0 10px !important;
+  }
+  
+  #tentang .grid {
+    gap: 16px !important;
+  }
+  
+  #tentang .group {
+    padding: 20px !important;
+    margin-bottom: 0 !important;
+  }
+  
+  #tentang .group h3 {
+    font-size: 1rem !important;
+    margin-bottom: 8px !important;
+  }
+  
+  #tentang .group p {
+    font-size: 0.8rem !important;
+  }
+
+  /* ====== SKILLS SECTION ====== */
+  #keahlian {
+    padding: 50px 0 !important;
+  }
+  
+  #keahlian > div {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  
+  #keahlian > div > div:first-child img {
+    width: 180px !important;
+    max-width: 180px !important;
+  }
+  
+  #keahlian h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 4px !important;
+  }
+  
+  #keahlian > div > div:last-child p:first-of-type {
+    font-size: 0.85rem !important;
+    margin-bottom: 20px !important;
+  }
+  
+  #keahlian .space-y-5 {
+    gap: 16px !important;
+  }
+  
+  #keahlian .space-y-5 > div {
+    margin-bottom: 0 !important;
+  }
+  
+  #keahlian .space-y-5 span:first-child {
+    font-size: 0.75rem !important;
+  }
+  
+  #keahlian .grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+  
+  #keahlian .grid .group {
+    padding: 12px 8px !important;
+  }
+  
+  #keahlian .grid .group span {
+    font-size: 0.65rem !important;
+  }
+
+  /* ====== PORTFOLIO SECTION ====== */
+  #portfolio {
+    padding: 50px 0 !important;
+  }
+  
+  #portfolio h2 {
+    font-size: 1.6rem !important;
+    margin-bottom: 6px !important;
+  }
+  
+  #portfolio > div > div > p {
+    font-size: 0.85rem !important;
+    margin-bottom: 24px !important;
+  }
+  
+  #portfolio .grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  #portfolio .group {
+    padding: 16px !important;
+  }
+  
+  #portfolio .group img {
+    border-radius: 12px !important;
+  }
+  
+  #portfolio .group h3 {
+    font-size: 1rem !important;
+    margin-bottom: 6px !important;
+  }
+  
+  #portfolio .group p {
+    font-size: 0.8rem !important;
+  }
+
+  /* ====== NAVBAR ====== */
+  nav a img {
+    height: 45px !important;
+  }
+  
+  nav a span {
+    font-size: 1.25rem !important;
+  }
+
   /* Contact section - stack vertically on mobile */
   .contact {
     padding: 60px 0 100px;
@@ -411,5 +580,16 @@
 
   .form-container {
     padding: 24px 12px 16px;
+  }
+  
+  /* Extra small screens */
+  #beranda h1 {
+    font-size: 1.4rem !important;
+  }
+  
+  #tentang h2,
+  #keahlian h2,
+  #portfolio h2 {
+    font-size: 1.4rem !important;
   }
 }
