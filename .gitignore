@@ -38,3 +38,6 @@ Thumbs.db
 
 # Ignore bootsnap cache
 /tmp/cache/bootsnap/
+
+# Bootsnap cache
+tmp/cache/

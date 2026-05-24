@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @portfolio = ApiClient.get('/api/v1/portfolio')
+    @portfolio = ApiClient.get('/api/v1/public/portfolio')
   end
   
   def contact
